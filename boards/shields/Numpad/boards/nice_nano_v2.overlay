@@ -39,6 +39,12 @@
     };
 };
 
+// Node name must match original "EXT_POWER" label to preserve user settings.
+EXT_POWER {
+    compatible = "zmk,ext-power-generic";
+    control-gpios = <&gpio0 13 GPIO_ACTIVE_HIGH>;
+};
+
 / {
     chosen {
         zmk,underglow = &led_strip;
