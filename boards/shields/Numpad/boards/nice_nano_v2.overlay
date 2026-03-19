@@ -39,6 +39,8 @@
     };
 };
 
+&ext_power { status = "okay"; };
+
 / {
     chosen {
         zmk,underglow = &led_strip;
