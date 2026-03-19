@@ -23,7 +23,6 @@
 
         diode-direction = "row2col";
         row-gpios
-        row-gpios
             = <&pro_micro 21 GPIO_ACTIVE_HIGH>   /* row 0 */
             , <&pro_micro 20 GPIO_ACTIVE_HIGH>   /* row 1 */
             , <&pro_micro 19 GPIO_ACTIVE_HIGH>   /* row 2 */
