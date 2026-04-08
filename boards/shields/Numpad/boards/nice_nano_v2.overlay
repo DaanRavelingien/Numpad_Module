@@ -16,9 +16,8 @@
 	
 	 spi0_default: spi0_default {
         group1 {
-            psels = <NRF_PSEL(SPIM_SCK,  0, 17)>,
-                    <NRF_PSEL(SPIM_MOSI, 0, 13)>,
-                    <NRF_PSEL(SPIM_MISO, 0, 17)>; /* MISO unused, reuse SCK pin */
+            psels = <NRF_PSEL(SPIM_SCK,  0, 4)>,
+                    <NRF_PSEL(SPIM_MOSI, 0, 17)>,
         };
     };
 
@@ -26,7 +25,6 @@
         group1 {
             psels = <NRF_PSEL(SPIM_SCK,  0, 17)>,
                     <NRF_PSEL(SPIM_MOSI, 0, 13)>,
-                    <NRF_PSEL(SPIM_MISO, 0, 17)>;
             low-power-enable;
         };
     };
@@ -66,7 +64,6 @@
 
     nice_view: ls0xx@0 {
         compatible = "sharp,ls0xx";
-        label = "DISPLAY";
         spi-max-frequency = <2000000>;
         reg = <0>;
         width = <160>;
