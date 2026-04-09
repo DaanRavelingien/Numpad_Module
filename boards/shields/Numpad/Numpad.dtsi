@@ -2,9 +2,8 @@
 
 / {
     chosen {
-        zmk,kscan = &kscan_composite;
+        zmk,kscan = &kscan0;
         zmk,matrix-transform = &default_transform;
-		zmk,encoder = &encoder;
     };
 
 	encoder: encoder_0 {
@@ -14,6 +13,12 @@
 		steps = <80>;
 		status = "okay";
 	};
+
+	sensors: sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&encoder>;
+        triggers-per-rotation = <20>;
+    };
 
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
@@ -48,23 +53,8 @@
             ;
     };
 	
-	kscan_encoder_btn: kscan_direct {
-		compatible = "zmk,kscan-gpio-direct";
-		input-gpios = <&gpio0 9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
-					  <&gpio0 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-	};
-	
-	kscan_composite: kscan_composite {
-		compatible = "zmk,kscan-composite";
-		rows = <6>;
-		columns = <4>;
-
-		matrix {
-			kscan = <&kscan0>;
-		};
-		direct {
-			kscan = <&kscan_direct>;
-			row-offset = <5>;
-		};
+	encoder_btn: encoder_btn {
+        compatible = "zmk,kscan-gpio-direct";
+        input-gpios = <&gpio0 9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
     };
 };
