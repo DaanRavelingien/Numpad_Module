@@ -55,7 +55,7 @@
 	
 	encoder_btn: encoder_btn {
         compatible = "zmk,kscan-gpio-direct";
-        input-gpios = <&gpio0 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        input-gpios = <&gpio0 9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
     };
 	
 	kscan_composite: kscan_composite {
