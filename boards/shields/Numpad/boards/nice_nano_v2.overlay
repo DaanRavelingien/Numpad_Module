@@ -63,7 +63,7 @@
     cs-gpios = <&gpio0 6 GPIO_ACTIVE_LOW>;
 
     nice_view: ls0xx@0 {
-        compatible = "sharp,ls0xx";
+        compatible = "nice,view";
         spi-max-frequency = <2000000>;
         reg = <0>;
         width = <160>;
