@@ -54,23 +54,6 @@
     };
 };
 
-&spi1 {
-    compatible = "nordic,nrf-spim";
-    status = "okay";
-    pinctrl-0 = <&spi1_default>;
-    pinctrl-1 = <&spi1_sleep>;
-    pinctrl-names = "default", "sleep";
-    cs-gpios = <&gpio0 6 GPIO_ACTIVE_LOW>;
-
-    nice_view: ls0xx@0 {
-        compatible = "nice,view";
-        spi-max-frequency = <2000000>;
-        reg = <0>;
-        width = <160>;
-        height = <68>;
-    };
-};
-
 / {
     chosen {
         zmk,underglow = &led_strip;
